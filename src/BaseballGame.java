@@ -34,6 +34,9 @@ public class BaseballGame {
 
     public void handleOption(String selectedOption) {
         switch (selectedOption) {
+            case "0":
+                setDigit();
+                break;
             case "1":
                 gameAnnouncement.printGameStartMessage();
                 gameStart();
@@ -48,21 +51,39 @@ public class BaseballGame {
         }
     }
 
+    private void setDigit() {
+        boolean isSetDigit = false;
+        while (!isSetDigit) {
+            String digit = inputRequester.selectDigit();
+            if (validator.isValidDigit(digit)) {
+                validator.setDigit(Integer.parseInt(digit));
+                randomNumberGenerator.setDigit(Integer.parseInt(digit));
+                isSetDigit = true;
+            } else {
+                gameAnnouncement.printWrongDigitMessage();
+            }
+
+        }
+    }
+
     private void gameStart() {
         boolean isCorrect = false;
         int answer = randomNumberGenerator.getRandomNumber();
+        int[] answerArr = randomNumberGenerator.getNumberArr();
 
         while (!isCorrect) {
             String stringNumber = inputRequester.inputNumber();
             if (validator.isValidNumber(stringNumber)) {
-                if (validator.isAnswer(randomNumberGenerator, answer)) {
+                if (validator.isAnswer(answerArr, answer)) {
                     gameAnnouncement.printCongratulationMessage();
                     gameRecorder.saveTryCounter(validator.tryCounter);
+                    validator.resetTryCounter();
                     isCorrect = true;
                 }
             }
         }
     }
+
     private void showGameRecord() {
         gameRecorder.printRecord();
     }
