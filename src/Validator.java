@@ -18,27 +18,25 @@ public class Validator {
             return true;
         } else {
             int[] validNumberArr = getValidNumberArr(answerArr.length);
-            countStrikeAndBall(answerArr, validNumberArr);
+            printCountStrikeAndBall(answerArr, validNumberArr);
             return false;
         }
     }
 
     public int[] getValidNumberArr(int answerLength) {
-        int pow = digit - 1;
-        int index = 0;
+        int index = answerLength-1;
         int validNumberCopy = validNumber;
         int[] validNumberArr = new int[answerLength];
 
         while (validNumberCopy > 0) {
-            int division = (int) (Math.pow(10, pow--));
-            int number = validNumberCopy / division;
-            validNumberCopy %= division;
-            validNumberArr[index++] = number;
+            int num = validNumberCopy%10;
+            validNumberArr[index--] = num;
+            validNumberCopy/=10;
         }
         return validNumberArr;
     }
 
-    public void countStrikeAndBall(int[] answerArr, int[] validNumberArr) {
+    public void printCountStrikeAndBall(int[] answerArr, int[] validNumberArr) {
         int strikeCounter = 0;
         int ballCounter = 0;
         List<Integer> integerList = Arrays.stream(answerArr)
