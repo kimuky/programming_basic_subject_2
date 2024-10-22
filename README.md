@@ -93,7 +93,7 @@
 
     - 스트라이크, 볼 판별 시에는 자리수, 수가 있는지 판별해야함
     - 그렇기에 인덱스와 그 수가 있는지 탐색을 해야함
-    - 배열은 앞서 했던 것처럼 Arrays.BinarySearch()을 지원하지만 <b>정렬이 되어진 배열만!</b> 정상적으로 작동
+    - 배열은 앞서 했던 것처럼 Arrays.BinarySearch()을 지원하지만 <b>정렬이 되어진 배열만</b> 정상적으로 작동
     - set은 iterator가 있지만 해당 인덱스, 수가 있는지 로직을 짜면 복잡해질 것을 우려
     - set -> list 변환 후, Collections.shuffle()을 통해 섞고 indexOf() 통해 인덱스와 그 수가 있는지를 판별
 
@@ -117,6 +117,7 @@
         int index = 0;
         for (Integer i : numberList) {
             int num = (int) Math.pow(10, pow--) * i;
+    ```
 
   - 4.결론
     - 컬렉션 프레임워크에 대한 개념 부족
@@ -155,8 +156,9 @@
               }
           }
       }
-  }
-  ```
+    }
+    ```
+
    
   - 3.해결
     - next() -> nextLine()으로 바꿔 개행문자 기준으로 입력을 받음
