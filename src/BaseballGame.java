@@ -6,7 +6,7 @@ public class BaseballGame {
     Validator validator;
     GameRecorder gameRecorder;
     boolean isRunning = true;
-
+    //생성자
     public BaseballGame(InputRequester inputRequester, GameAnnouncement gameAnnouncement, RandomNumberGenerator randomNumberGenerator, Validator validator, GameRecorder gameRecorder) {
         this.inputRequester = inputRequester;
         this.gameAnnouncement = gameAnnouncement;
