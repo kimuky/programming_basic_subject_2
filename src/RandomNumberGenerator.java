@@ -15,7 +15,7 @@ public class RandomNumberGenerator {
 
         while (numberSet.size() < digit) {
             // 1 ~ 9
-            int number = (int) (Math.random() * 8) + 1;
+            int number = (int) (Math.random() * 9) + 1;
             numberSet.add(number);
         }
         List<Integer> numberList = new ArrayList<>(numberSet);
