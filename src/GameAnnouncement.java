@@ -1,4 +1,9 @@
 public class GameAnnouncement {
+
+    public void printWelcomeMessage() {
+        System.out.println("환영합니다~ 원하시는 번호를 입력해주세요.");
+    }
+
     public void printGameStartMessage() {
         System.out.println("<게임 시작>");
     }
@@ -15,8 +20,12 @@ public class GameAnnouncement {
         System.out.println("< 게임 기록 보기 >");
     }
 
+    public void printWrongOptionMessage() {
+        System.out.println("0, 1, 2, 3 중에 입력 해주세요!!");
+    }
+
     public void printWrongDigitMessage() {
-        System.out.println("3, 4 , 5 중에 입력 해주세요!!");
+        System.out.println("3, 4, 5 중에 입력 해주세요!!");
     }
 
 }
