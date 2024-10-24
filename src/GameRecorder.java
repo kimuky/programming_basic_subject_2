@@ -4,7 +4,7 @@ public class GameRecorder {
     // 순서가 중요, 어레이리스트 활용,
     ArrayList<Integer> record = new ArrayList<>();
 
-    // 어레이리스트에 시도횟수를 넣어줌
+    // 어레이리스트에 시도횟수를 넣어줌 /1111111
     public void saveTryCounter(int tryCounter) {
         record.add(tryCounter);
     }
